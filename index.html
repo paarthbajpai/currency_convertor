@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff7e5f;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #feb47b;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter (USD to INR)</h1>
+        <label for="amount">Amount in USD:</label>
+        <input type="number" id="amount" placeholder="Enter amount in USD">
+        <button onclick="convertCurrency()">Convert to INR</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function convertCurrency() {
+            var amount = document.getElementById('amount').value;
+            var conversionRate = 74.93; // Example conversion rate, you can update it as per the current rate
+            var result = amount * conversionRate;
+            document.getElementById('result').innerText = amount + " USD = " + result.toFixed(2) + " INR";
+        }
+    </script>
+</body>
+</html>
